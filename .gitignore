@@ -1,0 +1,14 @@
+plugged/
+packages/
+backups/
+elpa/
+.cache
+*.data
+auto
+session.*
+auto-save-list/
+eshell/
+*.eld
+transient/
+kitty-themes/
+.netrwhist
