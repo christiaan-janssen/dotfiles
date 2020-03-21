@@ -12,3 +12,6 @@ eshell/
 transient/
 kitty-themes/
 .netrwhist
+*_back*
+*.bak*
+*~*
