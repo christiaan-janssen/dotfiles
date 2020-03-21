@@ -81,6 +81,13 @@
   # Enable the KDE Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.windowManager.i3 = {
+    enable = true;
+    package = pkgs.i3-gaps;
+    extraPackages = with pkgs; [
+      dmenu i3status i3lock i3blocks-gaps
+    ];
+  };
 
   # Setup Virtualbox
   virtualisation.virtualbox.host.enable = true;
