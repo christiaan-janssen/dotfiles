@@ -9,9 +9,18 @@
     tmux
     gnupg
     ripgrep
-    zsh
     git
+    networkmanagerapplet
 
+    # Shell
+    zsh
+    zsh-autoenv
+    zsh-autosuggestions
+    zsh-completions
+    zsh-git-prompt
+    zsh-history-substring-search
+    zsh-syntax-highlighting
+    
     # Editors
     vim
     neovim
@@ -28,6 +37,12 @@
     SDL2_mixer
     SDL2_net
     SDL2_ttf
+
+    # Languages
+    sbcl
+
+    # Games
+    cataclysm-dda
   ];
 
 }
