@@ -1,35 +1,47 @@
+if exists('g:vscode')
+    " VSCode extension
+else
+    " ordinary neovim
+    luafile $HOME/.config/nvim/lua/plugins.lua
+    source $HOME/.config/nvim/keybindings.vim
 
-call plug#begin()
-  Plug 'tpope/vim-sensible'
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-surround'
-  Plug 'scrooloose/nerdtree'
-  Plug 'ctrlpvim/ctrlp.vim'
+    luafile $HOME/.config/nvim/lua/lsp-settings.lua
+    source $HOME/.config/nvim/lsp-config.vim
+    luafile $HOME/.config/nvim/lua/omnisharp.lua
+    luafile $HOME/.config/nvim/lspsaga.lua
+    luafile $HOME/.config/nvim/compe-config.lua
+    luafile $HOME/.config/nvim/lua/lsp_install.lua
 
-  Plug 'hashivim/vim-terraform'
+    source $HOME/.config/nvim/ui.vim
+    luafile $HOME/.config/nvim/lua/evileline.lua
 
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-  Plug 'deoplete-plugins/deoplete-jedi'
+    filetype plugin indent on
+    syntax on
 
-  Plug 'jnurmine/Zenburn'
+    set notimeout
+    set timeoutlen=500
+    set tabstop     =4
+    set softtabstop =4
+    set shiftwidth  =4
+    set expandtab
+    let g:tagbar_position = 'topleft vertical'
 
-call plug#end()
+    " OCaml setup 
+    " TODO: Move into a file 
+    let g:opamshare = substitute(system('opam var share'),'\n$','','''')
+    execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
-set number
-set splitbelow
-set splitright
 
-let g:deoplete#enable_at_startup = 1
+    " Setup bracket matching
+    inoremap ( ()<left>
+    inoremap [ []<left>
+    inoremap { {}<left>
+    inoremap {<CR> {<CR>}<ESC>O
+    inoremap {;<CR> {<CR>};<ESC>O
+    inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+    inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+    inoremap <expr> ] strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+    inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
+    inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
 
-:imap jk <esc>
-
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-map <F3> :NERDTreeToggle<CR>
-
-colorscheme zenburn
-
+endif
