@@ -1,0 +1,19 @@
+;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Wed Jan 19 07:19:55 2022
+;; Desktop file format version 208
+;; Emacs version 27.2
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (25063 44427 849762 82000) (desktop . "208") "christiaan@prometheus" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-CTDB-Fira Code-normal-normal-normal-*-16-*-*-*-d-0-iso10646-1") (font-parameter) (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#EEFFFF") (background-color . "#292D3E") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 10) (right-fringe . 10) (no-special-glyphs) (scroll-bar-foreground . "#93a1a1") (scroll-bar-background . "#93a1a1") (menu-bar-lines . 0) (tab-bar-lines . 0) (height . 51) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#c792ea") (sticky) (environment) (last-focus-update . t) (tabs (current-tab (name . "*sly-mrepl for sbcl*") (explicit-name))) (frameset--id . "D797-60B4-9072-756D") (frameset--mini t . t) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (width . 92) (left . 962) (top . 39)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 80) (min-pixel-width . 100) (min-pixel-height-ignore . 60) (min-pixel-width-ignore . 40) (min-pixel-height-safe . 20) (min-pixel-width-safe . 20)) leaf (pixel-width . 945) (pixel-height . 1008) (total-width . 94) (total-height . 50) (normal-height . 1.0) (normal-width . 1.0) (buffer "*scratch*" (selected . t) (hscroll . 0) (fringes 10 10 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 145) (start . 1))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist '((48 . #("  (run-or-raise \"rofi -show run\" '(:instance \"rofi\"))" 0 2 (fontified nil) 2 3 (fontified nil face (rainbow-delimiters-depth-2-face)) 3 16 (fontified nil) 16 32 (fontified nil face font-lock-string-face) 32 34 (fontified nil) 34 35 (fontified nil face (rainbow-delimiters-depth-3-face)) 35 44 (fontified nil face font-lock-builtin-face) 44 45 (fontified nil) 45 51 (fontified nil face font-lock-string-face) 51 52 (fontified nil face (rainbow-delimiters-depth-3-face)) 52 53 (fontified nil face (rainbow-delimiters-depth-2-face))))))
+(setq file-name-history '(#("/home/christiaan/emacs-from-scratch/" 0 36 (ivy-index 0)) #("/home/christiaan/.emacs.d/" 0 26 (ivy-index 0)) #("/home/christiaan/.emacs.d/emacs.org" 0 35 (ivy-index 0)) #("/home/christiaan/quicklisp/local-projects/cj/cj.lisp" 0 52 (ivy-index 4)) #("/home/christiaan/org/shopping.org" 0 33 (ivy-index 0)) #("/home/christiaan/.stumpwm.d/init.lisp" 0 37 (ivy-index 0))))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
