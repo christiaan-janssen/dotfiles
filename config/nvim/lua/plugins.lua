@@ -74,5 +74,7 @@ return require("packer").startup(
 
         -- Ruby
 
+        -- GDScipt
+        use { 'habamax/vim-godot' }
     end
 )
