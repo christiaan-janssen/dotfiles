@@ -1,9 +1,0 @@
-url/
-request/
-*.cache
-*.#*
-*.lsp*
-.emacs.d
-tramp
-smex-items
-recentf
