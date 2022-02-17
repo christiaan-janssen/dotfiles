@@ -20,4 +20,4 @@ lua require'lspconfig'.clangd.setup{}
 
 lua require'lspconfig'.clojure_lsp.setup{}
 lua require'lspconfig'.elmls.setup{}
-#lua require'lspconfig'.gdscript.setup{}
+"lua require'lspconfig'.gdscript.setup{}

@@ -7,6 +7,7 @@ return require("packer").startup(
         use {"kyazdani42/nvim-web-devicons"}
         use {"kyazdani42/nvim-tree.lua"}
         use {"lewis6991/gitsigns.nvim"}
+        use {"airblade/vim-gitgutter"}
         use {"907th/vim-auto-save"}
         use {"nvim-treesitter/nvim-treesitter"}
         use {"chriskempson/base16-vim"}
@@ -44,6 +45,25 @@ return require("packer").startup(
         use {"nvim-telescope/telescope-media-files.nvim"}
 
         use {"christoomey/vim-tmux-navigator"}
+
+        use {
+            "nvim-neorg/neorg",
+            -- tag = "latest",
+            ft = "norg",
+            after = {"nvim-treesitter", "telescope.nvim"}, -- You may want to specify Telescope here as well
+            config = function()
+                require('neorg').setup {
+                     ["core.defaults"] = {},
+                ["core.norg.dirman"] = {
+                    config = {
+                        workspaces = {
+                            org = "~/org",
+                        }
+                    }
+                }
+                }
+            end
+        }
 
         use {'arcticicestudio/nord-vim'}
         use {'mhartington/oceanic-next'}
