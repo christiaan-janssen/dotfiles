@@ -78,6 +78,15 @@ return require("packer").startup(
         use {'tpope/vim-surround'}
         use {'glepnir/lspsaga.nvim'}
 
+        -- Wiki / Project
+        use {'vimwiki/vimwiki',
+            branch = 'dev'
+        }
+        use{'tools-life/taskwiki'}
+
+        use {'powerman/vim-plugin-AnsiEsc'} -- Add color tor charts
+        use {'farseer90718/vim-taskwarrior'} -- enables grid view
+
         -- Clojure
         use { 'Olical/conjure' }
         use { 'tpope/vim-dispatch' }

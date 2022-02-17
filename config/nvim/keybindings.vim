@@ -61,6 +61,8 @@ nnoremap <leader>wd <C-W>c
 nnoremap <leader>ws <C-W>s
 nnoremap <leader>wv <C-W>v
 
+nnoremap <leader>fw <cmd>VimwikiIndex<cr>
+
 " vim-test
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
 nmap <leader> tt :TestNearest<CR>
