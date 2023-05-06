@@ -337,6 +337,21 @@
         <command>playerctl next</command>
       </action>
     </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>amixer -D pulse sset Master '5%+'</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>amixer -D pulse sset Master '5%-'</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>amixer -D pulse set Master toggle</command>
+      </action>
+    </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
         <command>xbacklight +10</command>
@@ -416,7 +431,7 @@
     </keybind>
     <keybind key="C-A-Return">
       <action name="Execute">
-        <command>exo-open --launch TerminalEmulator</command>
+        <command>kitty</command>
       </action>
     </keybind>
     <keybind key="W-w">
