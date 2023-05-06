@@ -33,6 +33,8 @@ return require('packer').startup(function()
     end
   }
 
+  use { 'christoomey/vim-tmux-navigator' }
+
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
