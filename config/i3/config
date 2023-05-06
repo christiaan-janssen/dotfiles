@@ -470,6 +470,7 @@ exec --no-startup-id volumeicon
 exec nitrogen --restore
 #Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec_always waybar
 
 #exec --no-startup-id udiskie -ant &
 
@@ -768,12 +769,14 @@ bindsym $mod+u border none
 
 
 #new_window pixel 1
-new_window normal
+#new_window normal
 #new_window none
+default_border normal
 
 #new_float pixel 1
-new_float normal
+#new_float normal
 #new_float none
+default_floating_border normal
 
 #####################################################################################################################
 #################                          Popups  control                                          #################
