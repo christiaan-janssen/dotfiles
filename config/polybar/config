@@ -1,3 +1,4 @@
+# vim: ft=config
 ;=====================================================
 ;
 ;   To learn more about how to configure Polybar
@@ -119,7 +120,7 @@ font-3 = "Noto Sans Mono:size=10;0"
 
 modules-left = i3 xwindow
 modules-center = 
-modules-right = arch-updates memory2 cpu2 battery date
+modules-right = memory2 cpu2 battery date
 
 separator = |
 
@@ -238,7 +239,7 @@ separator = |
 enable-ipc = true
 
 ; Fallback click handlers that will be called if
-; there's no matching module handler found.
+; theres no matching module handler found.
 click-left =
 click-middle =
 click-right =
@@ -304,8 +305,8 @@ font-2 = "Noto Sans:size=10;0"
 font-3 = "Noto Sans Mono:size=10;0"
 
 modules-left = ewmh xwindow
-modules-center = kernel
-modules-right =  memory2 cpu2 date
+modules-center = 
+modules-right = memory2 cpu2 battery date
 
 tray-detached = false
 tray-offset-x = 0
