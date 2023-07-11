@@ -29,10 +29,10 @@
 # Mod1 = Alt key on keyboard
 
 #Set Alt key
-#set $mod Mod1
+set $mod Mod1
 
 #set Super key
-set $mod Mod4
+#set $mod Mod4
 
 #####################################################################################################################
 #################                          Define the movements keys - variables                    #################
@@ -64,7 +64,7 @@ set $right l
 #exec --no-startup-id xrandr --output DVI-1 --right-of DVI-0 --auto
 #exec --no-startup-id xrandr --output DVI-D-1 --right-of DVI-I-1 --auto
 #exec --no-startup-id xrandr --output HDMI-2 --right-of HDMI-1 --auto
-exec --no-startup-id xrandr --output DP-3 --mode 3440x1440 --left-of eDP-1 --mode 1920x1200
+#exec --no-startup-id xrandr --output DP-3 --mode 3440x1440 --left-of eDP-1 --mode 1920x1200
 
 
 # my current setup
@@ -193,7 +193,7 @@ bindsym $mod+Shift+X exec "~/scripts/lock.sh"
 bindsym $mod+Shift+r restart
 
 # reload the configuration file
-# bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload
 
 
 
@@ -303,10 +303,10 @@ bindsym $mod+a focus parent
 #####################################################################################################################
 
 # Resizing by 1
-bindsym $mod+Mod1+Ctrl+Right resize shrink width 1 px or 1 ppt
-bindsym $mod+Mod1+Ctrl+Up resize grow height 1 px or 1 ppt
-bindsym $mod+Mod1+Ctrl+Down resize shrink height 1 px or 1 ppt
-bindsym $mod+Mod1+Ctrl+Left resize grow width 1 px or 1 ppt
+#3bindsym $mod+Mod1+Ctrl+Right resize shrink width 1 px or 1 ppt
+#3bindsym $mod+Mod1+Ctrl+Up resize grow height 1 px or 1 ppt
+#3bindsym $mod+Mod1+Ctrl+Down resize shrink height 1 px or 1 ppt
+#3bindsym $mod+Mod1+Ctrl+Left resize grow width 1 px or 1 ppt
 
 
 ####################################################################################################################
@@ -474,7 +474,11 @@ exec_always waybar
 
 #exec --no-startup-id udiskie -ant &
 
-exec xmodmap Xmodmap
+exec xmodmap /home/christiaan/Xmodmap
+
+exec xinput set-prop "DLL09FF:01 06CB:CE39 Touchpad" "libinput Tapping Enabled" 1
+exec xinput set-prop "DLL09FF:01 06CB:CE39 Touchpad" "libinput Natural Scrolling Enabled" 1
+
 #####################################################################################################################
 #################                                 system applications                               #################
 #####################################################################################################################
