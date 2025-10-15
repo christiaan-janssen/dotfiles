@@ -3,7 +3,7 @@
 ## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
 
 ## Kill if already running
-killall -9 xfsettingsd picom polybar mpd dunst ksuperkey xfce4-power-manager
+killall -9 xfsettingsd picom polybar mpd dunst ksuperkey xfce4-power-manager mullvad-vpn
 
 ## Restore Wallpaper
 nitrogen --restore
@@ -12,8 +12,8 @@ nitrogen --restore
 xfsettingsd &
 
 ## polkit agent
-if [[ ! `pidof xfce-polkit` ]]; then
-	/usr/lib/xfce-polkit/xfce-polkit &
+if [[ ! $(pidof xfce-polkit) ]]; then
+  /usr/lib/xfce-polkit/xfce-polkit &
 fi
 
 ## Enable power management
@@ -41,7 +41,9 @@ exec thunar --daemon &
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
-xmodmap ~/dotfiles/xmodmap
+xmodmap ~/xmodmap
+
+mullvad-vpn &
 
 ## These applets are specifically for tint2 panel.
 ## If you're using tint2 as panel, Uncomment these applets.
@@ -51,4 +53,3 @@ xmodmap ~/dotfiles/xmodmap
 
 ## User Friendly Bluetooth Menu
 #blueman-applet &
-

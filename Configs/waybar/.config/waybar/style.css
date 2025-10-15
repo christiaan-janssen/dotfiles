@@ -1,0 +1,12 @@
+
+* {
+    font-family: JetBrainsMono Nerd Font Mono;
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background: transparent;
+    color: #FFFFFF;
+    margin: 0px 50px 0px 0px;
+}

@@ -1,0 +1,19 @@
+
+# https://github.com/altercation/solarized#the-values
+#font=Source Sans Pro Semi-Bold 10
+font=Fira Code Bold 14
+background-color=#002B36
+text-color=#839496
+border-size=3
+border-radius=3
+border-color=#FFFFFF
+default-timeout=5000
+
+#anchor=bottom-right
+
+
+padding=10
+
+[urgency=high]
+text-color=#CB4B16
+

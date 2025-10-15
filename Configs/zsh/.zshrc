@@ -3,6 +3,9 @@ if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="~/.bin:$PATH"
+   
 eval "$(starship init zsh)"
 
 # Set the directory we want to store zinit and plugins
@@ -21,6 +24,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+
+# Setup nvm
+source /usr/share/nvm/init-nvm.sh
 
 # Keybindings
 bindkey -e
@@ -53,16 +59,30 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(atuin init zsh)"
 
 # Aliases
-alias ls='ls --color'
+alias ls='eza'
 alias vim='nvim'
 alias c='clear'
-alias ll="exa -l --git"
-alias azl="aws-azure-login --mode=gui"
-alias awsume=". $(pyenv which awsume)"
-alias kdev="awsume default && kubectl config use-context arn:aws:eks:eu-west-1:643335327026:cluster/dev-bancs-eks"
+alias ll="eza -la --git"
 alias cat="bat --theme \"Monokai Extended Bright\" "
 alias gs="git status"
 alias tfi="terraform init"
 alias tfiu="terraform init -upgrade"
 alias tfp="terraform plan"
+alias csi="chicken-csi"
+alias csc="chicken-csc"
+alias tree="tree --gitignore"
 
+# Paths
+export PATH=$PATH:"~/.config/emacs/bin"
+export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+
+# Rabo Aliases
+alias azl="aws-azure-login --mode=gui"
+#alias awsume=". $(pyenv which awsume)"
+alias kdev="awsume default && kubectl config use-context arn:aws:eks:eu-west-1:643335327026:cluster/dev-bancs-eks"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+. "$HOME/.local/bin/env"
