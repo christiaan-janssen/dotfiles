@@ -3,6 +3,10 @@ if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]] then 
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+fi
+
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export PATH="~/.bin:$PATH"
    
@@ -47,15 +51,6 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# Path
-export PATH=$PATH:"/Users/christiaan/.local/bin"
-export PATH="/Users/christiaan/Library/Python/3.9/bin:$PATH"
-
-# Setup NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 eval "$(atuin init zsh)"
 
 # Aliases
@@ -81,8 +76,3 @@ alias azl="aws-azure-login --mode=gui"
 #alias awsume=". $(pyenv which awsume)"
 alias kdev="awsume default && kubectl config use-context arn:aws:eks:eu-west-1:643335327026:cluster/dev-bancs-eks"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-. "$HOME/.local/bin/env"
