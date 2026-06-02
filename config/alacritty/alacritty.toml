@@ -8,7 +8,7 @@
 ## Import additional configuration files.
 general.import = [
   "~/.config/alacritty/alacritty-theme/themes/catppuccin_latte.toml",
-  "~/.config/alacritty/fonts.toml"
+  "~/.config/alacritty/fonts.toml",
 ]
 
 ## You can set shell.program to the path of your favorite shell, e.g. /bin/zsh.
@@ -52,8 +52,8 @@ lines = 24
 
 ## Blank space added around the window in pixels.
 [window.padding]
-x = 12
-y = 12
+x = 0
+y = 0
 
 ## SCROLLING ------------------------------------------------------
 [scrolling]
@@ -64,7 +64,9 @@ multiplier = 3
 [bell]
 animation = "Linear"
 duration = 20
-command = { program = "paplay", args = ["/usr/share/sounds/freedesktop/stereo/dialog-error.oga"] }
+command = { program = "paplay", args = [
+  "/usr/share/sounds/freedesktop/stereo/dialog-error.oga",
+] }
 
 ## SELECTION ------------------------------------------------------
 [selection]
@@ -88,13 +90,13 @@ hide_when_typing = false
 
 ## HINTS ----------------------------------------------------------
 [[hints.enabled]]
-command         = "xdg-open"
-hyperlinks      = true
+command = "xdg-open"
+hyperlinks = true
 post_processing = true
-persist         = false
-mouse.enabled   = true
-binding         = { key = "U", mods = "Control|Shift" }
-regex           = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩‘]+"
+persist = false
+mouse.enabled = true
+binding = { key = "U", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩‘]+"
 
 ## DEBUG ----------------------------------------------------------
 [debug]
