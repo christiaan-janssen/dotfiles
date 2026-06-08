@@ -16,3 +16,4 @@ kitty-themes/
 *.bak*
 *~*
 config/tmux/plugins
+zsh/plugins

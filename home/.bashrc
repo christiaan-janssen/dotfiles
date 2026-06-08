@@ -8,6 +8,8 @@ export EDITOR=nvim
 
 SSH_ENV="$HOME/.ssh/agent-environment"
 
+eval "$(starship init bash)"
+
 function start_agent {
   echo "Initialising new SSH agent..."
   /usr/bin/ssh-agent | sed 's/^echo/#echo/' >"${SSH_ENV}"
@@ -73,48 +75,48 @@ esac
 
 use_color=true
 
-# Set colorful PS1 only on colorful terminals.
-# dircolors --print-database uses its own built-in database
-# instead of using /etc/DIR_COLORS.  Try to use the external file
-# first to take advantage of user additions.  Use internal bash
-# globbing instead of external grep binary.
-safe_term=${TERM//[^[:alnum:]]/?} # sanitize TERM
-match_lhs=""
-[[ -f ~/.dir_colors ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
-[[ -f /etc/DIR_COLORS ]] && match_lhs="${match_lhs}$(</etc/DIR_COLORS)"
-[[ -z ${match_lhs} ]] &&
-  type -P dircolors >/dev/null &&
-  match_lhs=$(dircolors --print-database)
-[[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
-
-if ${use_color}; then
-  # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
-  if type -P dircolors >/dev/null; then
-    if [[ -f ~/.dir_colors ]]; then
-      eval $(dircolors -b ~/.dir_colors)
-    elif [[ -f /etc/DIR_COLORS ]]; then
-      eval $(dircolors -b /etc/DIR_COLORS)
-    fi
-  fi
-
-  if [[ ${EUID} == 0 ]]; then
-    PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
-  else
-    PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
-  fi
-
-  alias ls='ls --color=auto'
-  alias grep='grep --colour=auto'
-  alias egrep='egrep --colour=auto'
-  alias fgrep='fgrep --colour=auto'
-else
-  if [[ ${EUID} == 0 ]]; then
-    # show root@ when we don't have colors
-    PS1='\u@\h \W \$ '
-  else
-    PS1='\u@\h \w \$ '
-  fi
-fi
+# # Set colorful PS1 only on colorful terminals.
+# # dircolors --print-database uses its own built-in database
+# # instead of using /etc/DIR_COLORS.  Try to use the external file
+# # first to take advantage of user additions.  Use internal bash
+# # globbing instead of external grep binary.
+# safe_term=${TERM//[^[:alnum:]]/?} # sanitize TERM
+# match_lhs=""
+# [[ -f ~/.dir_colors ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
+# [[ -f /etc/DIR_COLORS ]] && match_lhs="${match_lhs}$(</etc/DIR_COLORS)"
+# [[ -z ${match_lhs} ]] &&
+#   type -P dircolors >/dev/null &&
+#   match_lhs=$(dircolors --print-database)
+# [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
+#
+# if ${use_color}; then
+#   # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
+#   if type -P dircolors >/dev/null; then
+#     if [[ -f ~/.dir_colors ]]; then
+#       eval $(dircolors -b ~/.dir_colors)
+#     elif [[ -f /etc/DIR_COLORS ]]; then
+#       eval $(dircolors -b /etc/DIR_COLORS)
+#     fi
+#   fi
+#
+#   if [[ ${EUID} == 0 ]]; then
+#     PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
+#   else
+#     PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+#   fi
+#
+#   alias ls='ls --color=auto'
+#   alias grep='grep --colour=auto'
+#   alias egrep='egrep --colour=auto'
+#   alias fgrep='fgrep --colour=auto'
+# else
+#   if [[ ${EUID} == 0 ]]; then
+#     # show root@ when we don't have colors
+#     PS1='\u@\h \W \$ '
+#   else
+#     PS1='\u@\h \w \$ '
+#   fi
+# fi
 
 unset use_color safe_term match_lhs sh
 
@@ -163,21 +165,21 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:~/go/bin
 export PATH=$PATH:$HOME/.yarn/bin
 export PATH=/home/christiaan/bin:$PATH
-export PATH=/home/christiaan/.cargo/bin:$PATH
-export PATH=$PATH:/home/christiaan/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin
-source "$HOME/.cargo/env"
+# export PATH=/home/christiaan/.cargo/bin:$PATH
+# export PATH=$PATH:/home/christiaan/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin
+# source "$HOME/.cargo/env"
 
 export GOPATH=$HOME/go
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # Enable pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
 
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 
 [ -f "/home/christiaan/.ghcup/env" ] && source "/home/christiaan/.ghcup/env" # ghcup-env
 
@@ -199,3 +201,5 @@ alias ls='exa --icons --git'
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
